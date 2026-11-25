@@ -1,0 +1,12 @@
+// Allow the monitor (running as sendust, no sudo) to start/stop/restart casparcg.service only.
+// Install: sudo cp 50-casparcg-monitor.rules /etc/polkit-1/rules.d/
+polkit.addRule(function (action, subject) {
+    if (action.id == "org.freedesktop.systemd1.manage-units" &&
+        action.lookup("unit") == "casparcg.service" &&
+        subject.user == "sendust") {
+        var verb = action.lookup("verb");
+        if (verb == "start" || verb == "stop" || verb == "restart") {
+            return polkit.Result.YES;
+        }
+    }
+});

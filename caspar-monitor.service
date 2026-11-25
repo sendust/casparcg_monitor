@@ -1,0 +1,19 @@
+[Unit]
+Description=CasparCG server monitor (web UI, port from config.json)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Must be the same user that runs casparcg-server, so the Kill button can signal it
+User=sendust
+Group=sendust
+WorkingDirectory=/home/sendust/casparcg/caspar-monitor
+ExecStart=/usr/bin/python3 /home/sendust/casparcg/caspar-monitor/monitor.py /home/sendust/casparcg/caspar-monitor/config.json
+Environment=PYTHONUNBUFFERED=1
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=yes
+
+[Install]
+WantedBy=multi-user.target
