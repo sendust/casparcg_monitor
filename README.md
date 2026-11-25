@@ -35,7 +35,7 @@ Python 표준 라이브러리만 사용하며(추가 패키지 없음) 백엔드
 | `caspar-monitor.service` | systemd 유닛 |
 | `50-casparcg-monitor.rules` | polkit 규칙 (Start/Stop 버튼용) |
 
-같은 상위 폴더(`/home/sendust/casparcg`)의 관련 스크립트:
+관련 스크립트 (이 저장소에 포함, `/home/sendust/casparcg`에도 같은 파일이 있음):
 
 | 파일 | 설명 |
 |---|---|
@@ -46,7 +46,7 @@ Python 표준 라이브러리만 사용하며(추가 패키지 없음) 백엔드
 
 ```bash
 # 1) CasparCG를 systemd 서비스로 등록 (이미 했다면 생략)
-sudo /home/sendust/casparcg/install-casparcg-service.sh
+sudo ./install-casparcg-service.sh
 
 # 2) 모니터 서비스 등록
 sudo cp caspar-monitor.service /etc/systemd/system/
