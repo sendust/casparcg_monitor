@@ -6,6 +6,8 @@ Python 표준 라이브러리만 사용하며(추가 패키지 없음) 백엔드
 - 대상 환경: Ubuntu 26.04, CasparCG Server 2.5.1 (CEF 142), DeckLink 출력, NVIDIA GPU
 - 기본 주소: `http://<서버>:8070/`
 
+![CasparCG Monitor 전체 화면](casparcg_monitor_full.png)
+
 ## 기능
 
 | 영역 | 내용 |
